@@ -28,10 +28,13 @@
     "jade-loader": "^0.8.0",
     "node-sass": "^3.13.0",
     "sass-loader": "^4.0.2",
+    "script-loader": "^0.7.0",
     "webpack": "^1.14.0"
   },
   "dependencies": {
     "express": "^4.14.0",
+    "foundation-sites": "^6.3.0-rc2",
+    "jquery": "^3.1.1",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
     "serve-favicon": "^2.3.2"

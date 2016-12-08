@@ -1,1 +1,4 @@
-@import "header/header";
+@import '../../node_modules/foundation-sites/scss/foundation';
+@include foundation-everything(true);
+
+@import 'header/header';
