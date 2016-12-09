@@ -13,10 +13,10 @@ $(document).ready(function ($) {
 });
 
 const todos = [
-	{id: uuid(), title: "Configure Webpack", done: true},
-	{id: uuid(), title: "Learn React", done: false},
+	{id: uuid(), title: "Configure Webpack", done: true, longDesc: "Build pipeline with React and Foundation"},
+	{id: uuid(), title: "Learn React", done: false, longDesc: "Why not make another TODO-list app?\nI know, kind of boring."},
 	{id: uuid(), title: "Set up an Express server", done: true},
-	{id: uuid()}
+	{id: uuid(), longDesc: "Curiosity killed the cat, but it also killed the smallpox virus."}
 ];
 
 ReactDOM.render(

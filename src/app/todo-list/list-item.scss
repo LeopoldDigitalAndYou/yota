@@ -6,8 +6,12 @@
   border-radius: 2rem;
   margin: 3rem;
 
+  h3 {
+    margin-bottom: 1.5rem;
+  }
+
   &.status-done {
-    h3 {
+    h3, .todo-long-desc {
       text-decoration: line-through;
     }
 
