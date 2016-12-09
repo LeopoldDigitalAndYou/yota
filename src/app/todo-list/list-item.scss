@@ -3,7 +3,7 @@
 .todo-list-item {
   background: $lightBackground;
   padding: 1rem;
-  border-radius: 2rem;
+  border-radius: 1rem;
   margin: 1.5rem 2rem;
 
   h3 {
@@ -11,7 +11,7 @@
   }
 
   &.status-done {
-    h3, .todo-long-desc {
+    h3, .todo-long-desc p {
       text-decoration: line-through;
     }
 

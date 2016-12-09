@@ -1,21 +1,49 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 
 class LongDesc extends React.Component {
 	constructor(props) {
 		super(props);
+		this.state = {
+			text: this.props.text || "",
+			editing: !!this.props.editing
+		};
+	}
+
+	startEditing() {
+		this.setState({editing: true});
+	}
+
+	stopEditing() {
+		this.setState({editing: false});
+	}
+
+	update(ev) {
+		this.setState({text: ev.target.value});
 	}
 
 	render() {
-		if(this.props.text) {
+		if (this.state.editing) {
 			return <div className="row">
-				<div className="small-12 column todo-long-desc">
-					{ this.props.text.split("\n").map((line, parNum) => <p key={parNum}>{line}</p>) }
+				<textarea
+						className="small-12 columns todo-long-desc"
+						autoFocus
+						value={ this.state.text }
+						onChange={ e => this.update(e) }
+						onBlur={ e => this.stopEditing() }
+						/>
+			</div>;
+		}
+		if (this.state.text) {
+			return <div className="row">
+				<div
+						className="small-12 column todo-long-desc"
+						onClick={e => this.startEditing()}>
+					{ this.state.text.split("\n").map((line, parNum) => <p key={parNum}>{line}</p>) }
 				</div>
 			</div>;
 		}
-		else {
-			return null;
-		}
+		return null;
 	}
 }
 
@@ -41,7 +69,7 @@ class ListItem extends React.Component {
 					<label><input type="checkbox" checked={this.state.done} onChange={e => this.toggleDone(e)}/>Done</label>
 				</div>
 			</div>
-			<LongDesc text={this.state.longDesc}/>
+			<LongDesc text={this.state.longDesc} editing={false}/>
 		</div>;
 	}
 }
