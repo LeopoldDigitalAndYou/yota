@@ -14,10 +14,12 @@ class LongDesc extends React.Component {
 
 	startEditing() {
 		this.setState({editing: true});
+		return true;
 	}
 
 	stopEditing() {
 		this.setState({editing: false});
+		return true;
 	}
 
 	render() {

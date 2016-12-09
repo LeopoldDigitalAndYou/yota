@@ -12,10 +12,12 @@ class EditableInput extends React.Component {
 
 	startEditing() {
 		this.setState({editing: true});
+		return true;
 	}
 
 	stopEditing() {
 		this.setState({editing: false});
+		return true;
 	}
 
 	render() {
@@ -25,6 +27,8 @@ class EditableInput extends React.Component {
 					value={ this.props.value || "" }
 					onChange={ e => this.props.onChange(e) }
 					onBlur={ e => this.stopEditing() }
+			    onKeyPress={ e => { if(e.which == 13 || e.keyCode == 13) { this.props.onChange(e); } return true; }  }
+			    onKeyDown={ e => { if(e.which == 13 || e.keyCode == 13) { this.props.onChange(e); } return true; }  }
 			/>;
 		}
 		else {
