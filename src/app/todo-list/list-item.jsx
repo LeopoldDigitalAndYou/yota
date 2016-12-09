@@ -9,7 +9,7 @@ class LongDesc extends React.Component {
 		if(this.props.text) {
 			return <div className="row">
 				<div className="small-12 column todo-long-desc">
-					{ this.props.text.split("\n").map(line => <p>{line}</p>) }
+					{ this.props.text.split("\n").map((line, parNum) => <p key={parNum}>{line}</p>) }
 				</div>
 			</div>;
 		}
