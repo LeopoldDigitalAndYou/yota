@@ -1,5 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+
+import EditableInput from '../components/editable-input';
 
 class LongDesc extends React.Component {
 	constructor(props) {
@@ -31,7 +32,7 @@ class LongDesc extends React.Component {
 						value={ this.state.text }
 						onChange={ e => this.update(e) }
 						onBlur={ e => this.stopEditing() }
-						/>
+				/>
 			</div>;
 		}
 		if (this.state.text) {
@@ -64,7 +65,9 @@ class ListItem extends React.Component {
 	render() {
 		return <div className={'todo-list-item ' + (this.state.done ? 'status-done' : 'status-todo')}>
 			<div className="row">
-				<h3 className="small-10 columns">{this.state.title}</h3>
+				<h3 className="small-10 columns">
+					<EditableInput value={this.state.title} editing={false}/>
+				</h3>
 				<div className="todo-item-edit small-2 columns">
 					<label><input type="checkbox" checked={this.state.done} onChange={e => this.toggleDone(e)}/>Done</label>
 				</div>
