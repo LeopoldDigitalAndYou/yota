@@ -1,3 +1,5 @@
+"use strict";
+
 import 'script!jquery';
 import 'script!foundation-sites/dist/js/foundation.min';
 import React from 'react';

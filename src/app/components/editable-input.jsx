@@ -1,10 +1,11 @@
+"use strict";
+
 import React from 'react';
 
 class EditableInput extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			value: this.props.value || "",
 			editing: !!this.props.editing
 		};
 	}
@@ -17,22 +18,18 @@ class EditableInput extends React.Component {
 		this.setState({editing: false});
 	}
 
-	update(ev) {
-		this.setState({value: ev.target.value});
-	}
-
 	render() {
 		if (this.state.editing) {
 			return <input
 					autoFocus
-					value={ this.state.value }
-					onChange={ e => this.update(e) }
+					value={ this.props.value || "" }
+					onChange={ e => this.props.onChange(e) }
 					onBlur={ e => this.stopEditing() }
 			/>;
 		}
 		else {
 			return <span onClick={e => this.startEditing()}>
-				{ this.state.value }
+				{ this.props.value || "" }
 				</span>;
 		}
 	}
