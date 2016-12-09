@@ -36,8 +36,8 @@ class ListItem extends React.Component {
 	render() {
 		return <div className={'todo-list-item ' + (this.state.done ? 'status-done' : 'status-todo')}>
 			<div className="row">
-				<h3 className="small-9 columns">{this.state.title}</h3>
-				<div className="todo-item-edit small-3 columns">
+				<h3 className="small-10 columns">{this.state.title}</h3>
+				<div className="todo-item-edit small-2 columns">
 					<label><input type="checkbox" checked={this.state.done} onChange={e => this.toggleDone(e)}/>Done</label>
 				</div>
 			</div>
