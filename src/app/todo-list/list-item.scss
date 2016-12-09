@@ -1,3 +1,27 @@
-.status-done {
-  text-decoration: line-through;
+@import '../colours';
+
+.todo-list-item {
+  background: $lightBackground;
+  padding: 2rem;
+  border-radius: 2rem;
+  margin: 1rem 3rem;
+
+  &.status-done {
+    h3 {
+      text-decoration: line-through;
+    }
+
+    .todo-item-edit {
+      label {
+        font-weight: bold;
+        color: #005500;
+      }
+    }
+  }
+
+  .todo-item-edit {
+    label {
+      font-size: 1.2rem;
+    }
+  }
 }

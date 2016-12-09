@@ -1,5 +1,11 @@
 @import '../../node_modules/foundation-sites/scss/foundation';
 @include foundation-everything(true);
 
-@import 'list-item/list-item';
+@import './colours';
+
+@import 'todo-list/list-item';
 @import 'header/header';
+
+body {
+  background: $mainBackground;
+}
